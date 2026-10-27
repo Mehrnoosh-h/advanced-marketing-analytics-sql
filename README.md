@@ -348,30 +348,38 @@ This module implements two multi-touch attribution models.
 
 ### Model A: Linear attribution
 
+### Model A: Linear Attribution
+
 Every eligible touchpoint receives an equal share of order revenue.
 
 **Formula:**
 
-```text
-Touchpoint Revenue = Order Revenue / Number of Eligible Touchpoints
-```
+$$
+\text{Touchpoint Revenue} =
+\frac{\text{Order Revenue}}{\text{Number of Eligible Touchpoints}}
+$$
 
-### Model B: Time-decay attribution
+### Model B: Time-Decay Attribution
+
 Interactions closer to purchase receive higher weights.
 
 A seven-day half-life is used.
 
 **Step 1 — Calculate the raw weight:**
 
-```text
-Weight = 0.5 ^ (Days Before Purchase / 7)
-```
+$$
+w_i = 0.5^{d_i / 7}
+$$
+
+where $d_i$ represents the number of days between the interaction and purchase.
 
 **Step 2 — Normalize the weight and allocate revenue:**
 
-```text
-Attributed Revenue = Order Revenue × (Touchpoint Weight / Sum of Order Weights)
-```
+$$
+\text{Attributed Revenue}_i =
+\text{Order Revenue} \times
+\frac{w_i}{\sum_j w_j}
+$$
 
 ### Validated results
 
