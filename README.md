@@ -350,9 +350,11 @@ This module implements two multi-touch attribution models.
 
 Every eligible touchpoint receives an equal share of order revenue.
 
-\[
-\text{Touchpoint Revenue}=\frac{\text{Order Revenue}}{\text{Eligible Touchpoints}}
-\]
+**Formula:**
+
+```text
+Touchpoint Revenue = Order Revenue / Number of Eligible Touchpoints
+```
 
 ### Model B: Time-decay attribution
 
