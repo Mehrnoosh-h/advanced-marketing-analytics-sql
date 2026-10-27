@@ -436,12 +436,12 @@ Customers are grouped into monthly cohorts based on the month of their first com
 7. Validate retention rates and cohort consistency.
 
 ### Retention formula
-
-\[
-\text{Retention Rate}_{m}=
+$$
+\text{Retention Rate}_m =
 \frac{\text{Active Customers in Month }m}
-{\text{Original Cohort Size}}\times100
-\]
+{\text{Original Cohort Size}}
+\times 100
+$$
 
 ### Validated results
 
@@ -564,10 +564,11 @@ This module combines campaign-level marketing engagement with last-touch attribu
 
 ### Budget-based ROAS
 
-\[
-\text{Budget-Based ROAS}=
+$$
+\text{Budget-Based ROAS} =
 \frac{\text{Attributed Revenue}}{\text{Campaign Budget}}
-\]
+$$
+
 
 Campaign budget is treated as a planned budget rather than confirmed actual advertising spend.
 
