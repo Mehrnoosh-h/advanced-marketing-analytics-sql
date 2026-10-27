@@ -357,23 +357,21 @@ Touchpoint Revenue = Order Revenue / Number of Eligible Touchpoints
 ```
 
 ### Model B: Time-decay attribution
-
 Interactions closer to purchase receive higher weights.
 
-A seven-day half-life is used:
+A seven-day half-life is used.
 
-\[
-w_i=0.5^{d_i/7}
-\]
+**Step 1 — Calculate the raw weight:**
 
-where \(d_i\) represents the number of days between the interaction and purchase.
+```text
+Weight = 0.5 ^ (Days Before Purchase / 7)
+```
 
-Weights are normalized within each order:
+**Step 2 — Normalize the weight and allocate revenue:**
 
-\[
-\text{Attributed Revenue}_i =
-\text{Order Revenue}\times\frac{w_i}{\sum_j w_j}
-\]
+```text
+Attributed Revenue = Order Revenue × (Touchpoint Weight / Sum of Order Weights)
+```
 
 ### Validated results
 
